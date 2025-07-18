@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Ticket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .ticket {
+      background: white;
+      border-left: 5px solid #2563eb;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticket">
+    <h2>🎟️ Eliseo Youth Trade Fair</h2>
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Ticket Number:</strong> <span id="ticket"></span></p>
+    <p><strong>Date:</strong> 4 August 2025</p>
+    <p><strong>Venue:</strong> Exhibition Park, Harare</p>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('name').innerText = urlParams.get('name') || "N/A";
+    document.getElementById('ticket').innerText = urlParams.get('ticket') || "N/A";
+  </script>
+
+</body>
+</html>
